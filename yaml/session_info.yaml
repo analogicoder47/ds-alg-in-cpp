@@ -1,0 +1,24 @@
+server_info:
+   ip: 192.168.0.11
+   port: 44007
+   backlog: 1
+   sender_company: XTAI
+
+broker_info:
+   - ip: 192.168.0.12
+     port: 55009
+     target_company: T7790a1
+     expected_seqno: 1
+     passwd: 2929
+
+   - ip: 192.168.0.12
+     port: 55019
+     target_company: T7792x1
+     expected_seqno: 1
+     passwd: 3929
+
+socket_operation:
+   login_recv_timeout: 60    # in second
+   heartbeat_interval: 10    # in second
+   resend_req_timeout: 36    # in second
+   resend_req_loop: 3
