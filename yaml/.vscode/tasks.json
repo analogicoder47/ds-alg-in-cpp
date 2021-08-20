@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo command",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "${workspaceFolder}"
+            ],
+        },
+        {
+            "label": "build session_info",
+            "type": "shell",
+            "command": "g++",
+            "args": ["-I",
+                     "/usr/local/include/yaml-cpp",
+                     "-c",
+                     "-o",
+                    "${workspaceFolder}/build/session_info.o",
+                     "${workspaceFolder}/src/session_info.cpp"
+                    ],
+            "group": {
+                "kind": "build",
+                "isDefault": true               
+            }
+        },
+        {
+            "label": "build main",
+            "type": "shell",
+            "command": "g++",
+            "args": ["-I",
+                     "/usr/local/include/yaml-cpp",
+                     "-L",
+                     "/usr/local/lib/libyaml-cpp*",
+                     "-o",
+                     "${workspaceFolder}/bin/main",
+                     "${workspaceFolder}/build/session_info.o",
+                     "${workspaceFolder}/src/main.cpp"
+                    ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
