@@ -8,21 +8,21 @@
             "name": "cpp - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/selection_sort",
+            "program": "${workspaceFolder}/bin/quicksort",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ],
-            "miDebuggerPath": "/usr/bin/gdb"
+            ]
         }
     ]
 }

@@ -12,7 +12,7 @@
             ]
         },
         {
-            "label": "sorting",
+            "label": "build selection_sort",
             "type": "shell",
             "command": "g++",
             "args": [
@@ -26,13 +26,27 @@
             }
         },
         {
-            "label": "tree",
+            "label": "build binary_search",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-o",
                 "${workspaceFolder}/bin/binary_search",
                 "${workspaceFolder}/src/tree/binary_search.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build quicksort",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-o",
+                "${workspaceFolder}/bin/quicksort",
+                "${workspaceFolder}/src/sort/quicksort.cpp"
             ],
             "group": {
                 "kind": "build",
