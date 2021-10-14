@@ -4,21 +4,23 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo command",
+            "label": "rm command",
             "type": "shell",
-            "command": "echo",
+            "command": "rm",
             "args": [
-                "${workspaceFolder}"
+                "-rf",
+                "${workspaceFolder}/build/*.o"
             ]
         },
         {
-            "label": "build selection_sort",
+            "label": "build interpolation_search",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-o",
-                "${workspaceFolder}/bin/selection_sort",
-                "${workspaceFolder}/src/sort/selection_sort.cpp"
+                "${workspaceFolder}/build/interpolation_search.o",
+                "-c",
+                "${workspaceFolder}/src/search/interpolation_search.cpp",
             ],
             "group": {
                 "kind": "build",
@@ -31,8 +33,9 @@
             "command": "g++",
             "args": [
                 "-o",
-                "${workspaceFolder}/bin/binary_search",
-                "${workspaceFolder}/src/tree/binary_search.cpp"
+                "${workspaceFolder}/build/binary_search.o",
+                "-c",
+                "${workspaceFolder}/src/search/binary_search.cpp"
             ],
             "group": {
                 "kind": "build",
@@ -40,13 +43,15 @@
             }
         },
         {
-            "label": "build quicksort",
+            "label": "build main",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-o",
-                "${workspaceFolder}/bin/quicksort",
-                "${workspaceFolder}/src/sort/quicksort.cpp"
+                "${workspaceFolder}/bin/main",
+                "${workspaceFolder}/build/interpolation_search.o",
+                "${workspaceFolder}/build/binary_search.o",
+                "${workspaceFolder}/src/search/main.cpp"
             ],
             "group": {
                 "kind": "build",
